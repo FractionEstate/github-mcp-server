@@ -52,6 +52,28 @@
       }
     },
     {
+      "label": "test:coverage",
+      "type": "shell",
+      "command": "pnpm test:coverage",
+      "group": "test",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "test:watch",
+      "type": "shell",
+      "command": "pnpm test:watch",
+      "group": "test",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
       "label": "lint",
       "type": "shell",
       "command": "pnpm lint",
@@ -61,6 +83,61 @@
         "reveal": "always",
         "panel": "new"
       }
-    }
+    },
+    {
+      "label": "lint:fix",
+      "type": "shell",
+      "command": "pnpm lint:fix",
+      "group": "none",
+      "problemMatcher": ["$eslint-stylish"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "build:docs",
+      "type": "shell",
+      "command": "pnpm build:docs",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "pnpm clean",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "docker:build",
+      "type": "shell",
+      "command": "pnpm docker:build",
+      "group": "none",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "docker:run",
+      "type": "shell",
+      "command": "pnpm docker:run",
+      "group": "none",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
   ]
 }

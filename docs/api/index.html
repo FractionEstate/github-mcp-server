@@ -1,0 +1,134 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>GitHub MCP Server API Documentation - v1.0.0</title><meta name="description" content="Documentation for GitHub MCP Server API Documentation"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">GitHub MCP Server API Documentation - v1.0.0</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>GitHub MCP Server API Documentation - v1.0.0</h2></div><div class="tsd-panel tsd-typography"><a id="md:github-mcp-server-with-cardano-development-tools" class="tsd-anchor"></a><h1><a href="#md:github-mcp-server-with-cardano-development-tools">GitHub MCP Server with Cardano Development Tools</a></h1><p>A Model Context Protocol (MCP) server for GitHub integration with specialized functionality for Cardano blockchain development. This server provides tools for interacting with the GitHub API via the Model Context Protocol, as well as Cardano blockchain tools focused on Aiken smart contracts and Cardano node operations.</p>
+<a id="md:features" class="tsd-anchor"></a><h2><a href="#md:features">Features</a></h2><a id="md:github-tools" class="tsd-anchor"></a><h3><a href="#md:github-tools">GitHub Tools</a></h3><ol>
+<li><strong>search-repositories</strong>: Search for GitHub repositories matching a query</li>
+<li><strong>get-repository-issues</strong>: Get issues from a GitHub repository</li>
+<li><strong>get-repository-contents</strong>: Get the contents of a file or directory in a GitHub repository</li>
+</ol>
+<a id="md:cardano-development-tools" class="tsd-anchor"></a><h3><a href="#md:cardano-development-tools">Cardano Development Tools</a></h3><ol start="4">
+<li><strong>search-aiken-examples</strong>: Search for Aiken smart contract examples and templates</li>
+<li><strong>get-aiken-docs</strong>: Get Aiken language documentation by section</li>
+<li><strong>validate-aiken-code</strong>: Validate and explain Aiken smart contract code</li>
+<li><strong>get-cardano-blockchain-info</strong>: Get information about Cardano blocks, transactions, addresses, and network stats</li>
+<li><strong>get-cardano-token-info</strong>: Get information about Cardano native tokens</li>
+</ol>
+<a id="md:cardano-node-tools" class="tsd-anchor"></a><h3><a href="#md:cardano-node-tools">Cardano Node Tools</a></h3><ol start="9">
+<li><strong>check-cardano-node</strong>: Get status and information about a running Cardano node</li>
+<li><strong>generate-cardano-keys</strong>: Generate Cardano address and keys</li>
+<li><strong>query-cardano-address</strong>: Get UTXOs and balance for a Cardano address</li>
+<li><strong>compile-aiken-contract</strong>: Compile an Aiken smart contract</li>
+</ol>
+<a id="md:prerequisites" class="tsd-anchor"></a><h2><a href="#md:prerequisites">Prerequisites</a></h2><ul>
+<li>Node.js (v24 or higher)</li>
+<li>pnpm (v10 or higher)</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> This project uses <a href="https://pnpm.io/">pnpm</a> as its package manager for better dependency management and faster installation times.</p>
+</blockquote>
+<a id="md:installation" class="tsd-anchor"></a><h2><a href="#md:installation">Installation</a></h2><ol>
+<li>Clone this repository</li>
+<li>Install pnpm if you don&#39;t have it:</li>
+</ol>
+<pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-3">-g</span><span class="hl-1"> </span><span class="hl-2">pnpm@latest</span>
+</code><button>Copy</button></pre>
+<ol start="3">
+<li>Install dependencies:</li>
+</ol>
+<pre><code class="language-bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">install</span>
+</code><button>Copy</button></pre>
+<ol start="4">
+<li>Build the project:</li>
+</ol>
+<pre><code class="language-bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">build</span>
+</code><button>Copy</button></pre>
+<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><a id="md:starting-the-server" class="tsd-anchor"></a><h3><a href="#md:starting-the-server">Starting the server</a></h3><pre><code class="language-bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">start</span>
+</code><button>Copy</button></pre>
+<a id="md:development-mode" class="tsd-anchor"></a><h3><a href="#md:development-mode">Development mode</a></h3><pre><code class="language-bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">dev</span>
+</code><button>Copy</button></pre>
+<a id="md:authentication" class="tsd-anchor"></a><h3><a href="#md:authentication">Authentication</a></h3><a id="md:github-api" class="tsd-anchor"></a><h4><a href="#md:github-api">GitHub API</a></h4><p>For authenticated access to private repositories or to avoid GitHub API rate limits, you can provide a GitHub personal access token to each tool call. This is optional but recommended for increased functionality.</p>
+<a id="md:cardano-node-integration" class="tsd-anchor"></a><h4><a href="#md:cardano-node-integration">Cardano Node Integration</a></h4><p>This server integrates directly with a running Cardano node. To use the Cardano node functionality:</p>
+<ol>
+<li>Ensure you have a running Cardano node</li>
+<li>Set the <code>CARDANO_NODE_SOCKET_PATH</code> environment variable to point to your node socket:</li>
+</ol>
+<pre><code class="language-bash"><span class="hl-3">export</span><span class="hl-1"> </span><span class="hl-4">CARDANO_NODE_SOCKET_PATH</span><span class="hl-1">=</span><span class="hl-2">/path/to/node.socket</span>
+</code><button>Copy</button></pre>
+<ol start="3">
+<li>Node configuration can be customized for each tool call with these parameters:<ul>
+<li><code>socketPath</code>: Path to cardano-node socket</li>
+<li><code>networkMagic</code>: Network magic number (e.g., 1097911063 for testnet)</li>
+<li><code>network</code>: Network name (&#39;mainnet&#39;, &#39;testnet&#39;, or &#39;preview&#39;)</li>
+<li><code>cliPath</code>: Path to cardano-cli executable</li>
+<li><code>era</code>: Cardano era (e.g., &#39;babbage&#39;, &#39;conway&#39;)</li>
+</ul>
+</li>
+</ol>
+<a id="md:integration-with-claude-for-desktop" class="tsd-anchor"></a><h3><a href="#md:integration-with-claude-for-desktop">Integration with Claude for Desktop</a></h3><p>To use this server with Claude for Desktop:</p>
+<ol>
+<li>Make sure Claude for Desktop is installed and updated to the latest version</li>
+<li>Open your Claude for Desktop configuration at:<ul>
+<li>Windows: <code>%AppData%\Claude\claude_desktop_config.json</code></li>
+<li>macOS: <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
+</ul>
+</li>
+<li>Add the GitHub MCP server configuration:</li>
+</ol>
+<pre><code class="language-json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;mcpServers&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-5">&quot;github-mcp&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">      </span><span class="hl-5">&quot;command&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;node&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-5">&quot;args&quot;</span><span class="hl-1">: [</span><span class="hl-2">&quot;PATH_TO_SERVER/build/index.js&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<ol start="4">
+<li>Replace <code>PATH_TO_SERVER</code> with the absolute path to your server directory</li>
+<li>Restart Claude for Desktop</li>
+</ol>
+<a id="md:development" class="tsd-anchor"></a><h2><a href="#md:development">Development</a></h2><p>To build and run the server in development mode:</p>
+<pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">dev</span>
+</code><button>Copy</button></pre>
+<a id="md:cardano-development" class="tsd-anchor"></a><h2><a href="#md:cardano-development">Cardano Development</a></h2><p>This server is specialized for Cardano blockchain development, particularly focusing on:</p>
+<a id="md:aiken-smart-contracts" class="tsd-anchor"></a><h3><a href="#md:aiken-smart-contracts">Aiken Smart Contracts</a></h3><p><a href="https://aiken-lang.org/">Aiken</a> is a modern smart contract language for Cardano that emphasizes simplicity and type safety. The MCP server provides specialized tools for:</p>
+<ul>
+<li>Searching for Aiken code examples</li>
+<li>Accessing official Aiken documentation</li>
+<li>Validating Aiken smart contract code</li>
+<li>Compiling Aiken contracts directly using your local Aiken installation</li>
+</ul>
+<a id="md:cardano-node-integration-1" class="tsd-anchor"></a><h3><a href="#md:cardano-node-integration-1">Cardano Node Integration</a></h3><p>This server integrates directly with a running Cardano node, allowing you to:</p>
+<ul>
+<li>Check node status and sync progress</li>
+<li>Generate payment addresses and keys</li>
+<li>Query UTXOs and address balances</li>
+<li>Perform on-chain operations directly from the server</li>
+</ul>
+<a id="md:full-node-requirements" class="tsd-anchor"></a><h3><a href="#md:full-node-requirements">Full Node Requirements</a></h3><p>To use the Cardano node integration features:</p>
+<ol>
+<li>Install and run a Cardano node (<a href="https://developers.cardano.org/docs/get-started/installing-cardano-node/">cardano-node installation guide</a>)</li>
+<li>Install the cardano-cli tool</li>
+<li>Set the <code>CARDANO_NODE_SOCKET_PATH</code> environment variable</li>
+<li>Ensure your node is fully synced with the blockchain</li>
+</ol>
+<p>For Aiken compilation:</p>
+<ol>
+<li>Install the Aiken compiler (<a href="https://aiken-lang.org/installation-guide">installation instructions</a>)</li>
+<li>Ensure the <code>aiken</code> command is available in your PATH</li>
+</ol>
+<ul>
+<li>Exploring official examples from the Aiken ecosystem</li>
+</ul>
+<a id="md:blockchain-interaction" class="tsd-anchor"></a><h3><a href="#md:blockchain-interaction">Blockchain Interaction</a></h3><p>The server allows interaction with the Cardano blockchain through Blockfrost API:</p>
+<ul>
+<li>Query block and transaction information</li>
+<li>Get address details and balances</li>
+<li>View native token information</li>
+<li>Retrieve network statistics</li>
+</ul>
+<a id="md:usage-examples" class="tsd-anchor"></a><h3><a href="#md:usage-examples">Usage Examples</a></h3><p><strong>Search for Aiken smart contract examples:</strong></p>
+<pre><code class="language-json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;search-aiken-examples&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;parameters&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-5">&quot;query&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;validator plutus&quot;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p><strong>Get Aiken language documentation:</strong></p>
+<pre><code class="language-json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;get-aiken-docs&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;parameters&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-5">&quot;section&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;type-system&quot;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p><strong>Validate Aiken smart contract code:</strong></p>
+<pre><code class="language-json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;validate-aiken-code&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;parameters&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-5">&quot;code&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;validator my_contract { fn spend(datum, redeemer) { redeemer }&quot;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p><strong>Get Cardano blockchain information:</strong></p>
+<pre><code class="language-json"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;get-cardano-blockchain-info&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">&quot;parameters&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-5">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;network&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">&quot;apiKey&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;YOUR_BLOCKFROST_API_KEY&quot;</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<a id="md:license" class="tsd-anchor"></a><h2><a href="#md:license">License</a></h2><p>MIT</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:github-mcp-server-with-cardano-development-tools"><span>Git<wbr/>Hub MCP <wbr/>Server with <wbr/>Cardano <wbr/>Development <wbr/>Tools</span></a><ul><li><a href="#md:features"><span>Features</span></a></li><li><ul><li><a href="#md:github-tools"><span>Git<wbr/>Hub <wbr/>Tools</span></a></li><li><a href="#md:cardano-development-tools"><span>Cardano <wbr/>Development <wbr/>Tools</span></a></li><li><a href="#md:cardano-node-tools"><span>Cardano <wbr/>Node <wbr/>Tools</span></a></li></ul></li><li><a href="#md:prerequisites"><span>Prerequisites</span></a></li><li><a href="#md:installation"><span>Installation</span></a></li><li><a href="#md:usage"><span>Usage</span></a></li><li><ul><li><a href="#md:starting-the-server"><span>Starting the server</span></a></li><li><a href="#md:development-mode"><span>Development mode</span></a></li><li><a href="#md:authentication"><span>Authentication</span></a></li><li><ul><li><a href="#md:github-api"><span>Git<wbr/>Hub API</span></a></li><li><a href="#md:cardano-node-integration"><span>Cardano <wbr/>Node <wbr/>Integration</span></a></li></ul></li><li><a href="#md:integration-with-claude-for-desktop"><span>Integration with <wbr/>Claude for <wbr/>Desktop</span></a></li></ul></li><li><a href="#md:development"><span>Development</span></a></li><li><a href="#md:cardano-development"><span>Cardano <wbr/>Development</span></a></li><li><ul><li><a href="#md:aiken-smart-contracts"><span>Aiken <wbr/>Smart <wbr/>Contracts</span></a></li><li><a href="#md:cardano-node-integration-1"><span>Cardano <wbr/>Node <wbr/>Integration</span></a></li><li><a href="#md:full-node-requirements"><span>Full <wbr/>Node <wbr/>Requirements</span></a></li><li><a href="#md:blockchain-interaction"><span>Blockchain <wbr/>Interaction</span></a></li><li><a href="#md:usage-examples"><span>Usage <wbr/>Examples</span></a></li></ul></li><li><a href="#md:license"><span>License</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>GitHub MCP Server API Documentation - v1.0.0</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

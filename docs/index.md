@@ -1,0 +1,44 @@
+# GitHub MCP Server Documentation
+
+This documentation provides information about the GitHub MCP Server implementation which integrates GitHub API functionality with the Model Context Protocol.
+
+## Architecture
+
+The GitHub MCP Server provides tools for interacting with GitHub APIs through a Model Context Protocol server. It includes specialized functionality for Cardano blockchain development.
+
+## Tools
+
+### GitHub Tools
+
+- **search-repositories**: Search for GitHub repositories matching a query
+- **get-repository-issues**: Get issues from a GitHub repository  
+- **get-repository-contents**: Get the contents of a file or directory in a GitHub repository
+
+### Cardano Development Tools
+
+- **search-aiken-examples**: Search for Aiken smart contract examples and templates
+- **get-aiken-docs**: Get Aiken language documentation by section
+- **validate-aiken-code**: Validate and explain Aiken smart contract code
+- **get-cardano-blockchain-info**: Get information about Cardano blocks, transactions, addresses, and network stats
+- **get-cardano-token-info**: Get information about Cardano native tokens
+
+### Cardano Node Tools
+
+- **check-cardano-node**: Get status and information about a running Cardano node
+- **generate-cardano-keys**: Generate Cardano address and keys
+- **query-cardano-address**: Get UTXOs and balance for a Cardano address
+- **compile-aiken-contract**: Compile an Aiken smart contract
+
+## Documentation
+
+- [MCP Tools Implementation Guide](mcp-tools.md) - Detailed information about the MCP tools integration
+- [Cardano Tools Guide](cardano-tools.md) - Detailed guide for Cardano blockchain development tools
+- [Cardano Environment Setup](cardano-environment.md) - Guide for setting up the Cardano development environment
+- [Testing Guide](testing.md) - Guide for testing the MCP server
+- [API Reference](/api/) - Generated API documentation
+
+## Environment Requirements
+
+- Node.js v24.x or later
+- pnpm v10.x or later
+- Docker and Docker Compose (for running with Cardano node)

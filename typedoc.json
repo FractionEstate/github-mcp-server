@@ -1,0 +1,14 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs/api",
+  "name": "GitHub MCP Server API Documentation",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "includeVersion": true,
+  "readme": "README.md",
+  "categorizeByGroup": true,
+  "categorizeByGroup": true,
+  "categoryOrder": ["GitHub API", "Cardano API", "Aiken", "*"],
+  "theme": "default"
+}

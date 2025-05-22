@@ -7,5 +7,16 @@
   "git.autoRepositoryDetection": "always",
   "git.autorefresh": true,
   "git.ignoreMissingGitWarning": false,
-  "projectManager.git.baseFolders": ["/workspaces"]
+  "projectManager.git.baseFolders": [
+    "/workspaces"
+  ],
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.crswap": true
+  },
+  "explorerExclude.backup": {}
 }

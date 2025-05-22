@@ -1,0 +1,213 @@
+# GitHub MCP Server with Cardano Development Tools
+
+![Node.js Version](https://img.shields.io/badge/node-24.x-brightgreen.svg)
+![pnpm Version](https://img.shields.io/badge/pnpm-10.x-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+A Model Context Protocol (MCP) server for GitHub integration with specialized functionality for Cardano blockchain development. This server provides tools for interacting with the GitHub API via the Model Context Protocol, as well as Cardano blockchain tools focused on Aiken smart contracts and Cardano node operations.
+
+## 🚀 Features
+
+### GitHub Tools
+
+1. **search-repositories**: Search for GitHub repositories matching a query
+2. **get-repository-issues**: Get issues from a GitHub repository
+3. **get-repository-contents**: Get the contents of a file or directory in a GitHub repository
+
+### Cardano Development Tools
+
+4. **search-aiken-examples**: Search for Aiken smart contract examples and templates
+5. **get-aiken-docs**: Get Aiken language documentation by section
+6. **validate-aiken-code**: Validate and explain Aiken smart contract code
+7. **get-cardano-blockchain-info**: Get information about Cardano blocks, transactions, addresses, and network stats
+8. **get-cardano-token-info**: Get information about Cardano native tokens
+
+### Cardano Node Tools
+
+9. **check-cardano-node**: Get status and information about a running Cardano node
+10. **generate-cardano-keys**: Generate Cardano address and keys
+11. **query-cardano-address**: Get UTXOs and balance for a Cardano address
+12. **compile-aiken-contract**: Compile an Aiken smart contract
+
+## 📋 Prerequisites
+
+- Node.js (v24.0.0 or higher)
+- pnpm (v10.0.0 or higher)
+
+> **Note:** This project uses [pnpm](https://pnpm.io/) as its package manager for better dependency management and faster installation times.
+
+## 🔧 Installation
+
+1. Clone this repository
+
+```bash
+git clone https://github.com/your-username/github-mcp-server.git
+cd github-mcp-server
+```
+
+2. Install pnpm if you don't have it:
+
+```bash
+npm install -g pnpm@latest
+```
+
+3. Install dependencies:
+
+```bash
+pnpm install
+```
+
+4. Build the project:
+
+```bash
+pnpm build
+```
+
+## 🚀 Usage
+
+### Running the Server
+
+Start the server with:
+
+```bash
+pnpm start
+```
+
+For development with automatic rebuilding:
+
+```bash
+pnpm dev
+```
+
+### Docker
+
+You can also run the server in Docker:
+
+```bash
+# Build the Docker image
+pnpm docker:build
+
+# Run the Docker container
+pnpm docker:run
+```
+
+### Environment Variables
+
+- `GITHUB_TOKEN`: GitHub personal access token for authenticated API access
+- `CARDANO_NODE_SOCKET_PATH`: Path to the Cardano node socket (for node operations)
+- `CARDANO_NETWORK`: Cardano network to use (mainnet, testnet, preview)
+- `BLOCKFROST_API_KEY`: Blockfrost API key for Cardano blockchain queries
+
+## 🧪 Testing
+
+Run the tests:
+
+```bash
+pnpm test
+```
+
+Generate test coverage report:
+
+```bash
+pnpm test:coverage
+```
+
+Run tests in watch mode during development:
+
+```bash
+pnpm test:watch
+```
+
+## 📚 Documentation
+
+- [MCP Tools Implementation Guide](docs/mcp-tools.md) - Detailed information about the MCP tools integration
+- [Cardano Tools Guide](docs/cardano-tools.md) - Detailed guide for Cardano blockchain development tools
+- [Testing Guide](docs/testing.md) - Guide for testing the MCP server
+- [Upgrade Summary](docs/upgrade-summary.md) - Summary of recent upgrades to the project
+- [API Reference](docs/api/) - Generated API documentation
+
+To build the documentation:
+
+```bash
+pnpm build:docs
+```
+
+## 🛠 Development
+
+```bash
+# Lint code
+pnpm lint
+
+# Lint and fix issues
+pnpm lint:fix
+
+# Clean build artifacts
+pnpm clean
+```
+
+## 📝 Example API Calls
+
+**Search GitHub repositories:**
+
+```json
+{
+  "name": "search-repositories",
+  "parameters": {
+    "query": "cardano blockchain",
+    "token": "YOUR_GITHUB_TOKEN"
+  }
+}
+```
+
+**Get repository issues:**
+
+```json
+{
+  "name": "get-repository-issues",
+  "parameters": {
+    "owner": "input-output-hk",
+    "repo": "cardano-node",
+    "state": "open"
+  }
+}
+```
+
+**Get repository contents:**
+
+```json
+{
+  "name": "get-repository-contents",
+  "parameters": {
+    "owner": "aiken-lang",
+    "repo": "aiken",
+    "path": "examples/hello_world"
+  }
+}
+```
+
+**Validate Aiken smart contract code:**
+
+```json
+{
+  "name": "validate-aiken-code",
+  "parameters": {
+    "code": "validator my_contract { fn spend(datum, redeemer) { redeemer }"
+  }
+}
+```
+
+**Get Cardano blockchain information:**
+
+```json
+{
+  "name": "get-cardano-blockchain-info",
+  "parameters": {
+    "type": "network",
+    "apiKey": "YOUR_BLOCKFROST_API_KEY"
+  }
+}
+```
+
+## 📄 License
+
+MIT
