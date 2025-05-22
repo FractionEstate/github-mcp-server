@@ -6,22 +6,19 @@ import {
   expect,
   beforeEach,
   afterEach,
-} from "@jest/globals";
-import {
-  McpServer,
-  StdioServerTransport,
-} from "../mock-mcp-sdk.js";
+} from '@jest/globals';
+import { McpServer, StdioServerTransport } from '../mock-mcp-sdk.js';
 
-describe("Mock MCP SDK", () => {
-  describe("McpServer", () => {
+describe('Mock MCP SDK', () => {
+  describe('McpServer', () => {
     let server: McpServer;
-    let consoleSpy: jest.SpyInstance;
+    let consoleSpy;
 
     beforeEach(() => {
-      consoleSpy = jest.spyOn(console, 'log').mockImplementation();
+      consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
       server = new McpServer({
-        name: "test-server",
-        version: "1.0.0",
+        name: 'test-server',
+        version: '1.0.0',
         capabilities: {
           resources: {},
           tools: {},
@@ -33,42 +30,44 @@ describe("Mock MCP SDK", () => {
       consoleSpy.mockRestore();
     });
 
-    it("should create an instance with correct properties", () => {
-      expect(server).toHaveProperty("name", "test-server");
-      expect(server).toHaveProperty("version", "1.0.0");
-      expect(server).toHaveProperty("capabilities");
+    it('should create an instance with correct properties', () => {
+      expect(server).toHaveProperty('name', 'test-server');
+      expect(server).toHaveProperty('version', '1.0.0');
+      expect(server).toHaveProperty('capabilities');
     });
 
-    it("should register a tool correctly", () => {
+    it('should register a tool correctly', () => {
       const schema = {
-        param1: { type: "string", description: "Test parameter" },
+        param1: { type: 'string', description: 'Test parameter' },
       };
 
-      const handler = jest.fn().mockResolvedValue({
-        content: [{ type: "text", text: "Test result" }],
-      });
+      const handler = jest
+        .fn<() => Promise<{ content: { type: string; text: string }[] }>>()
+        .mockResolvedValue({
+          content: [{ type: 'text', text: 'Test result' }],
+        });
 
-      server.tool("test-tool", "Test tool description", schema, handler);
+      server.tool('test-tool', 'Test tool description', schema, handler);
 
       // Verify tool registration was logged
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Registered tool: test-tool")
+        expect.stringContaining('Registered tool: test-tool')
       );
     });
 
-    it("should connect to a transport", async () => {
+    it('should connect to a transport', async () => {
       const transport = new StdioServerTransport();
       await server.connect(transport);
-      
+
       // Verify connection was logged
       expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining("Connected to transport")
+        expect.stringContaining('Connected to transport')
       );
     });
   });
 
-  describe("StdioServerTransport", () => {
-    it("should create an instance", () => {
+  describe('StdioServerTransport', () => {
+    it('should create an instance', () => {
       const transport = new StdioServerTransport();
       expect(transport).toBeInstanceOf(StdioServerTransport);
     });

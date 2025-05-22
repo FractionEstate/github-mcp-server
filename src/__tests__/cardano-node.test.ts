@@ -12,7 +12,9 @@ import * as os from 'os';
 
 // Mock the executeCardanoCli function from cardano.js
 jest.mock('../cardano.js', () => ({
-  executeCardanoCli: jest.fn() as jest.Mock<string | Promise<string>, any[]>,
+  executeCardanoCli: jest.fn() as jest.MockedFunction<
+    (...args: unknown[]) => Promise<string> | string
+  >,
   DEFAULT_CARDANO_CONFIG: {
     socketPath: '/tmp/node.socket',
     network: 'testnet',
