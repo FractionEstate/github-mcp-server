@@ -12,7 +12,7 @@ import * as os from 'os';
 
 // Mock the executeCardanoCli function from cardano.js
 jest.mock('../cardano.js', () => ({
-  executeCardanoCli: jest.fn().mockResolvedValue('mock output'),
+  executeCardanoCli: jest.fn() as jest.Mock<string | Promise<string>, any[]>,
   DEFAULT_CARDANO_CONFIG: {
     socketPath: '/tmp/node.socket',
     network: 'testnet',
@@ -59,14 +59,6 @@ describe('Cardano Node Functions', () => {
 
   describe('getNodeStatus', () => {
     it('should return node status when successful', async () => {
-      const mockNodeStatus = {
-        syncProgress: '99.8%',
-        blockHeight: 123456,
-        epoch: 200,
-        slot: 42000000,
-        networkName: 'testnet',
-      };
-
       // Mock successful execution
       (executeCardanoCli as jest.Mock)
         .mockResolvedValueOnce(JSON.stringify({ tip: 'mock tip' }))

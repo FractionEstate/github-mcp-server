@@ -1,0 +1,16 @@
+{
+  "name": "GitHub MCP Server Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-24",
+  "features": {},
+  "settings": {},
+  "postCreateCommand": "pnpm install",
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
