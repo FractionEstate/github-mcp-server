@@ -1,0 +1,4 @@
+packages:
+  - '.'
+  # Uncomment below when expanding to monorepo
+  # - 'packages/*'

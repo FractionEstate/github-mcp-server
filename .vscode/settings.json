@@ -1,0 +1,11 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.enabled": true,
+  "git.path": "git",
+  "git.autoRepositoryDetection": "always",
+  "git.autorefresh": true,
+  "git.ignoreMissingGitWarning": false,
+  "projectManager.git.baseFolders": ["/workspaces"]
+}

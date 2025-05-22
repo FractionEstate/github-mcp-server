@@ -1,33 +1,56 @@
-# GitHub MCP Server
+# GitHub MCP Server with Cardano Development Tools
 
-A Model Context Protocol (MCP) server for GitHub integration. This server provides tools for interacting with the GitHub API via the Model Context Protocol.
+A Model Context Protocol (MCP) server for GitHub integration with specialized functionality for Cardano blockchain development. This server provides tools for interacting with the GitHub API via the Model Context Protocol, as well as Cardano blockchain tools focused on Aiken smart contracts and Cardano node operations.
 
 ## Features
 
-This MCP server provides the following tools:
+### GitHub Tools
 
 1. **search-repositories**: Search for GitHub repositories matching a query
 2. **get-repository-issues**: Get issues from a GitHub repository
 3. **get-repository-contents**: Get the contents of a file or directory in a GitHub repository
 
+### Cardano Development Tools
+
+4. **search-aiken-examples**: Search for Aiken smart contract examples and templates
+5. **get-aiken-docs**: Get Aiken language documentation by section
+6. **validate-aiken-code**: Validate and explain Aiken smart contract code
+7. **get-cardano-blockchain-info**: Get information about Cardano blocks, transactions, addresses, and network stats
+8. **get-cardano-token-info**: Get information about Cardano native tokens
+
+### Cardano Node Tools
+
+9. **check-cardano-node**: Get status and information about a running Cardano node
+10. **generate-cardano-keys**: Generate Cardano address and keys
+11. **query-cardano-address**: Get UTXOs and balance for a Cardano address
+12. **compile-aiken-contract**: Compile an Aiken smart contract
+
 ## Prerequisites
 
 - Node.js (v16 or higher)
-- npm (v7 or higher)
+- pnpm (v8 or higher)
+
+> **Note:** This project uses [pnpm](https://pnpm.io/) as its package manager for better dependency management and faster installation times.
 
 ## Installation
 
 1. Clone this repository
-2. Install dependencies:
+2. Install pnpm if you don't have it:
 
 ```bash
-npm install
+npm install -g pnpm
 ```
 
-3. Build the project:
+3. Install dependencies:
 
 ```bash
-npm run build
+pnpm install
+```
+
+4. Build the project:
+
+```bash
+pnpm build
 ```
 
 ## Usage
@@ -35,12 +58,38 @@ npm run build
 ### Starting the server
 
 ```bash
-npm start
+pnpm start
+```
+
+### Development mode
+
+```bash
+pnpm dev
 ```
 
 ### Authentication
 
-For authenticated access to private repositories or to avoid rate limits, you can provide a GitHub personal access token to each tool call. This is optional but recommended for increased functionality.
+#### GitHub API
+
+For authenticated access to private repositories or to avoid GitHub API rate limits, you can provide a GitHub personal access token to each tool call. This is optional but recommended for increased functionality.
+
+#### Cardano Node Integration
+
+This server integrates directly with a running Cardano node. To use the Cardano node functionality:
+
+1. Ensure you have a running Cardano node
+2. Set the `CARDANO_NODE_SOCKET_PATH` environment variable to point to your node socket:
+
+```bash
+export CARDANO_NODE_SOCKET_PATH=/path/to/node.socket
+```
+
+3. Node configuration can be customized for each tool call with these parameters:
+   - `socketPath`: Path to cardano-node socket
+   - `networkMagic`: Network magic number (e.g., 1097911063 for testnet)
+   - `network`: Network name ('mainnet', 'testnet', or 'preview')
+   - `cliPath`: Path to cardano-cli executable
+   - `era`: Cardano era (e.g., 'babbage', 'conway')
 
 ### Integration with Claude for Desktop
 
@@ -57,9 +106,7 @@ To use this server with Claude for Desktop:
   "mcpServers": {
     "github-mcp": {
       "command": "node",
-      "args": [
-        "PATH_TO_SERVER/build/index.js"
-      ]
+      "args": ["PATH_TO_SERVER/build/index.js"]
     }
   }
 }
@@ -76,7 +123,100 @@ To build and run the server in development mode:
 npm run dev
 ```
 
+## Cardano Development
+
+This server is specialized for Cardano blockchain development, particularly focusing on:
+
+### Aiken Smart Contracts
+
+[Aiken](https://aiken-lang.org/) is a modern smart contract language for Cardano that emphasizes simplicity and type safety. The MCP server provides specialized tools for:
+
+- Searching for Aiken code examples
+- Accessing official Aiken documentation
+- Validating Aiken smart contract code
+- Compiling Aiken contracts directly using your local Aiken installation
+
+### Cardano Node Integration
+
+This server integrates directly with a running Cardano node, allowing you to:
+
+- Check node status and sync progress
+- Generate payment addresses and keys
+- Query UTXOs and address balances
+- Perform on-chain operations directly from the server
+
+### Full Node Requirements
+
+To use the Cardano node integration features:
+
+1. Install and run a Cardano node ([cardano-node installation guide](https://developers.cardano.org/docs/get-started/installing-cardano-node/))
+2. Install the cardano-cli tool
+3. Set the `CARDANO_NODE_SOCKET_PATH` environment variable
+4. Ensure your node is fully synced with the blockchain
+
+For Aiken compilation:
+
+1. Install the Aiken compiler ([installation instructions](https://aiken-lang.org/installation-guide))
+2. Ensure the `aiken` command is available in your PATH
+
+- Exploring official examples from the Aiken ecosystem
+
+### Blockchain Interaction
+
+The server allows interaction with the Cardano blockchain through Blockfrost API:
+
+- Query block and transaction information
+- Get address details and balances
+- View native token information
+- Retrieve network statistics
+
+### Usage Examples
+
+**Search for Aiken smart contract examples:**
+
+```json
+{
+  "name": "search-aiken-examples",
+  "parameters": {
+    "query": "validator plutus"
+  }
+}
+```
+
+**Get Aiken language documentation:**
+
+```json
+{
+  "name": "get-aiken-docs",
+  "parameters": {
+    "section": "type-system"
+  }
+}
+```
+
+**Validate Aiken smart contract code:**
+
+```json
+{
+  "name": "validate-aiken-code",
+  "parameters": {
+    "code": "validator my_contract { fn spend(datum, redeemer) { redeemer }"
+  }
+}
+```
+
+**Get Cardano blockchain information:**
+
+```json
+{
+  "name": "get-cardano-blockchain-info",
+  "parameters": {
+    "type": "network",
+    "apiKey": "YOUR_BLOCKFROST_API_KEY"
+  }
+}
+```
+
 ## License
 
 MIT
-"# github-mcp-server" 

@@ -1,0 +1,43 @@
+[1mdiff --git a/.vscode/settings.json b/.vscode/settings.json[m
+[1mindex fba0d20..20a2edf 100644[m
+[1m--- a/.vscode/settings.json[m
+[1m+++ b/.vscode/settings.json[m
+[36m@@ -1,36 +1,11 @@[m
+ {[m
+[31m-  "typescript.tsdk": "node_modules/typescript/lib",[m
+[31m-  "editor.formatOnSave": true,[m
+[31m-  "editor.defaultFormatter": "esbenp.prettier-vscode",[m
+[31m-  "editor.codeActionsOnSave": {[m
+[31m-    "source.fixAll.eslint": "explicit"[m
+[31m-  },[m
+   "[typescript]": {[m
+     "editor.defaultFormatter": "esbenp.prettier-vscode"[m
+   },[m
+[31m-  "[javascript]": {[m
+[31m-    "editor.defaultFormatter": "esbenp.prettier-vscode"[m
+[31m-  },[m
+[31m-  "[json]": {[m
+[31m-    "editor.defaultFormatter": "esbenp.prettier-vscode"[m
+[31m-  },[m
+[31m-  "files.exclude": {[m
+[31m-    "**/.git": true,[m
+[31m-    "**/.DS_Store": true,[m
+[31m-    "**/node_modules": true,[m
+[31m-    "build": false[m
+[31m-  },[m
+[31m-  "search.exclude": {[m
+[31m-    "**/node_modules": true,[m
+[31m-    "**/bower_components": true,[m
+[31m-    "**/*.code-search": true,[m
+[31m-    "build": true[m
+[31m-  },[m
+[31m-  "javascript.updateImportsOnFileMove.enabled": "always",[m
+[31m-  "typescript.updateImportsOnFileMove.enabled": "always",[m
+   "git.enabled": true,[m
+   "git.path": "git",[m
+   "git.autoRepositoryDetection": "always",[m
+   "git.autorefresh": true,[m
+[31m-  "git.ignoreMissingGitWarning": false[m
+[32m+[m[32m  "git.ignoreMissingGitWarning": false,[m
+[32m+[m[32m  "projectManager.git.baseFolders": ["/workspaces"][m
+ }[m

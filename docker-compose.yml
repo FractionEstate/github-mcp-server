@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  github-mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - node-ipc:/ipc
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - CARDANO_NETWORK=${CARDANO_NETWORK:-testnet}
+      - CARDANO_NODE_SOCKET_PATH=/ipc/node.socket
+    command: pnpm dev
+    depends_on:
+      - cardano-node
+      - ogmios
+  cardano-node:
+    image: inputoutput/cardano-node:latest
+    volumes:
+      - node-data:/data
+      - node-ipc:/ipc
+    ports:
+      - "${CARDANO_NODE_PORT:-3001}:3001"
+    environment:
+      - NETWORK=${CARDANO_NETWORK:-testnet}
+    command: >
+      run
+      --config /data/config/${CARDANO_NETWORK:-testnet}-config.json
+      --database-path /data/db
+      --socket-path /ipc/node.socket
+      --port 3001
+      --topology /data/config/${CARDANO_NETWORK:-testnet}-topology.json
+    healthcheck:
+      test: ["CMD-SHELL", "test -S /ipc/node.socket"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  ogmios:
+    image: cardanosolutions/ogmios:latest
+    restart: always
+    volumes:
+      - node-ipc:/ipc
+    ports:
+      - "${OGMIOS_PORT:-1337}:1337"
+    environment:
+      - OGMIOS_NETWORK=${CARDANO_NETWORK:-testnet}
+      - CARDANO_NODE_SOCKET_PATH=/ipc/node.socket
+    depends_on:
+      - cardano-node
+      --socket-path /ipc/node.socket
+      --port 3001
+      --topology /data/config/testnet-topology.json
+
+volumes:
+  node-data:
+  node-ipc:

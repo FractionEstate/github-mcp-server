@@ -24,6 +24,7 @@ dist/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/settings.json
 !.vscode/mcp.json
 *.suo
 *.ntvs*
@@ -34,3 +35,9 @@ dist/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Cardano specific
+keys/
+plutus/
+data/
+transactions/
